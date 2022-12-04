@@ -1,5 +1,20 @@
-.centered{
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
+.centered {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@layer base {
+  li {
+    @apply p-4 font-semibold text-gray-500 hover:text-gray-700 focus:text-gray-700;
+  }
 }
