@@ -1,5 +1,5 @@
 import React from "react";
-import './style/Signup.css';
+import './Signup.css';
 
 class Signup extends React.Component {
     constructor(props) {
@@ -50,7 +50,7 @@ class Signup extends React.Component {
 
                 <div class="absolute top-0 right-0 flex px-5 pt-5"><p className="px-2 pt-3 text-sm">Already a user?</p><button className="text-black bg-gray-300 rounded font-semibold w-20 h-10 text-sm hover:bg-gray-400" type="submit"> Sign In</button></div>
 
-                <div className="sign-in-section font-medium">
+                <div className="sign-up-section font-medium">
 
                     <form onSubmit={this.handleSubmit}>
 
