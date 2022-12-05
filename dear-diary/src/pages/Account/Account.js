@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../../components/layout/Navbar";
 
-function Profile() {
+function Account() {
   return (
     <div>
       <Navbar />
@@ -9,4 +9,4 @@ function Profile() {
   );
 }
 
-export default Profile;
+export default Account;
