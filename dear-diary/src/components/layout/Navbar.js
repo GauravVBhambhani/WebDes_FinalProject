@@ -2,6 +2,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import dearDiary from "../../assets/dear-diary.svg";
 import unknownUser from "../../assets/unknown-user.svg";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [nav, setNav] = useState(false);
@@ -13,9 +14,15 @@ function Navbar() {
         <div className="ml-10 flex items-center">
           <img src={dearDiary} alt="logo" className="mr-4" />
           <ul className="hidden md:flex">
-            <li>Home</li>
-            <li>Diary</li>
-            <li>Account</li>
+            <Link to="/">
+              <li className="nav-list">Home</li>
+            </Link>
+            <Link to="/diary">
+              <li className="nav-list">Diary</li>
+            </Link>
+            <Link to="/account">
+              <li className="nav-list">Account</li>
+            </Link>
           </ul>
         </div>
         <div>
@@ -31,9 +38,9 @@ function Navbar() {
       </div>
 
       <ul className={!nav ? "hidden" : "absolute w-full px-8 bg-sky-50"}>
-        <li className="border-b-2 ">Diary</li>
-        <li className="border-b-2 bg-sky-50 w-full">Home</li>
-        <li className="border-b-2 bg-sky-50 w-full">Account</li>
+        <li className="border-b-2 nav-list">Diary</li>
+        <li className="border-b-2 bg-sky-50 w-full nav-list">Home</li>
+        <li className="border-b-2 bg-sky-50 w-full nav-list">Account</li>
       </ul>
     </div>
   );
