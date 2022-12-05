@@ -21,4 +21,12 @@
   .sidebar-list {
     @apply p-3 hover:bg-slate-50 font-semibold;
   }
+
+  label {
+    @apply block mb-2 text-sm font-light text-gray-700;
+  }
+
+  .name {
+    @apply w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none;
+  }
 }
