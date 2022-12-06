@@ -1,5 +1,6 @@
 import React from 'react'
 import Signin from '../components/signin/Signin';
+import Footer from '../components/footer/Footer';
 
 const SplitScreen = () => {
   return (
@@ -16,10 +17,14 @@ const SplitScreen = () => {
           <div className='w-full h-full text-black centered row-span-8 md:col-span-8 pt-24'>
             <Signin />
           </div>
-
         </div>
+        <Footer/>
+
       </section>
+      
     </React.Fragment>
+
+    
   );
 }
 
