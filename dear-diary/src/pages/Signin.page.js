@@ -18,10 +18,9 @@ const SplitScreen = () => {
             <Signin />
           </div>
 
-          <footer className='w-screen h-screen grid grid-rows-12 text-xs text-black'><Footer/></footer>
+          <footer className='w-screen h-screen grid grid-rows-12 text-xs'><Footer/></footer>
         </div>
         
-
       // </div>
       
     // </React.Fragment>
