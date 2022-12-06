@@ -5,7 +5,15 @@
 input[type="submit"] {
     margin-top: 2rem;
     cursor: pointer;
-    background: rgb(249, 185, 14);
+    background: rgb(236, 64, 122);
+    color: white;
+    border: none;
+}
+
+input[type="submit"]:hover {
+    margin-top: 2rem;
+    cursor: pointer;
+    background: rgb(216, 27, 96);
     color: white;
     border: none;
 }
@@ -25,7 +33,7 @@ input {
     
 }
 input:focus {
-    border: 2px solid rgba(0, 206, 158, 1);
+    border: 2px solid rgb(216, 27, 96);
 }
 
 form {
@@ -45,10 +53,10 @@ textarea {
     padding: 7px;
     outline: none;
     border-radius: 5px;
-    border: 1px solid rgba(0, 206, 158, 1);
+    /* border: 1px solid rgb(216, 27, 96); */
 
     
 }
 textarea:focus{
-    border: 2px solid rgba(0, 206, 158, 1);
+    border: 2px solid rgb(216, 27, 96);
 }

@@ -3,6 +3,7 @@ export const TECH_STACK = [
     {name: 'Reactjs', link:"#"},
     {name: 'MongoDB', link:"#"},
     {name: 'Expressjs', link:"#"},
+    {name: 'Emailjs', link:"#"},
 ];
 
 export const PAGES = [

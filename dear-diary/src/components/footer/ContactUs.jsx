@@ -20,14 +20,14 @@ const ContactUs = () => {
     };
 
     return <div className="contact-form">
-        <p className="font-medium">WRITE TO US!</p>
+        <p className="font-medium text-pink-500">WRITE TO US!</p>
         <form ref={form} onSubmit={sendEmail}>
-            <label>Name</label>
-            <input type="text" name="user_name" />
-            <label>Email</label>
-            <input type="email" name="user_email" />
-            <label>Message</label>
-            <textarea name="message" />
+            <label className='pb-2'>Name</label>
+            <input type="text" name="user_name" className="text-black"/>
+            <label className='pb-2'>Email</label>
+            <input type="email" name="user_email" className="text-black"/>
+            <label className='pb-2'>Message</label>
+            <textarea name="message" className="text-black"/>
             <input type="submit" value="Send" />
         </form>
     </div>

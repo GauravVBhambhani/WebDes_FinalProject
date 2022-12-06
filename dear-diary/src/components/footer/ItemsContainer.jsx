@@ -8,8 +8,6 @@ const ItemsContainer = () => {
       <Item Links={TECH_STACK} title="TECHNOLOGIES"/>
       <Item Links={PAGES} title="GET STARTED"/>
       <ContactUs />
-      {/* <Item />
-      <Item /> */}
     </div>
   )
 }
