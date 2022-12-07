@@ -90,10 +90,6 @@ class Signup extends React.Component {
                             onChange={(e) => this.setState({ password: e.target.value })}
                         />
 
-                        {/* <div className="text-sm text-right">
-                        <a href="/" >Forgot password?</a>
-                    </div> */}
-
                         <div className="pt-5">
                             <button className="text-white bg-pink-500 w-60 h-10 rounded text-sm" type="submit"> Create Account </button>
                         </div>
