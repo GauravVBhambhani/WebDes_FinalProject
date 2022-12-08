@@ -40,6 +40,7 @@ app.use(express.static(__dirname + '/public'));
 
 // routes ==================================================
 require('./routes/user.js')(app); // configure our routes
+require('./routes/diary.js')(app);
 // start app ===============================================
 // startup our app at http://localhost:8080
 app.listen(port);

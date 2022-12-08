@@ -1,8 +1,8 @@
 var mongoose = require('mongoose');
-var DiaryDocuments = require('./diaryDocument');
+// var DiaryDocuments = require('./diaryDocument');
 
 module.exports = mongoose.model('Diary', {
-    diaryDocuments: {type: [DiaryDocuments]},
+    diaryDocuments: {type: Map},
     diaryResult: {type: String},
     diaryName: {String},
 });

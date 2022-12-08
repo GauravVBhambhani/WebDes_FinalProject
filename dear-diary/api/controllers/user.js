@@ -9,7 +9,7 @@ var { MongoClient } = require('mongodb');
 var mongo = new MongoClient("mongodb+srv://pateldhruvr:s!hzk*6z7k2rRtT@cluster0.olpizhz.mongodb.net/?retryWrites=true&w=majority");
 var myDb = mongo.db("test")
 
-exports.user_get_all_user = function(req, res) {
+exports.get_all_diary = function(req, res) {
     // res.send("Users ----")
     User.find(function(err, user) {
         // if there is an error retrieving, send the error.
@@ -34,7 +34,7 @@ exports.user_get_user = function (req, res) {
     });
 }
 
-exports.user_post_user = function(req, res) {
+exports.post_diary = function(req, res) {
     // console.log(req.body);
     var rec = new User(req.body);
     var email = rec.email;
@@ -65,7 +65,7 @@ exports.user_post_user = function(req, res) {
         }
 }
 
-exports.user_delete_user = function (req, res) {
+exports.delete_diary = function (req, res) {
     myDb.collection("users").deleteMany({"email" : req.body.email});
     res.send("Deleted user with email id : " + req.body.email);
 }
