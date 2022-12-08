@@ -33,8 +33,7 @@ const defaultValue = "";
 //everytime our client connects it is going to run this io connection
 io.on("connection", socket => {
     socket.on("get-document", async documentId => {
-        console.log("inside socket - get document by id");
-            const document = await findOrCreateDocument(documentId);
+        const document = await findOrCreateDocument(documentId);
             //putting socket into its own room and that room can talk based on the roomid i.e. documentid
             socket.join(documentId);
             socket.emit("load-document", document.data);
