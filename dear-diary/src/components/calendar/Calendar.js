@@ -14,7 +14,6 @@ function CalendarComponent() {
 
   return (
     <div className='app'>
-      <h1 className='text-center'>Diary Calendar</h1>
       <div className='calendar-container' style={CalendarComponentStyle}>
         <Calendar onChange={setDate} value={date} />
       </div>
