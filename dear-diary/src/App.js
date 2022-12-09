@@ -14,8 +14,8 @@ import TextEditor from '../src/components/Document/TextEditor';
 import Home from './pages/Home';
 
 function App() {
-  const current = new Date();
-  const currentDate = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+  // const current = new Date();
+  // const currentDate = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
 
   return (
     <Routes>
