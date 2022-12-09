@@ -10,8 +10,8 @@ import Password from "./pages/account/Password";
 import Account from "./pages/account/Account";
 import Profile from "./pages/account/Profile";
 import Calendar from './pages/Calendar';
-import Dashboard from '../src/components/Dashboard/Dashboard';
 import TextEditor from '../src/components/Document/TextEditor';
+import Home from './pages/Home';
 
 function App() {
   const current = new Date();
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Dashboard />} />
+      <Route path="/" element={<Home />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/account" element={<Account />} />
       <Route path="/account/profile" element={<Profile />} />
