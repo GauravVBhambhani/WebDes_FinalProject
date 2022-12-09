@@ -12,8 +12,8 @@ import Navbar from '../layout/Navbar';
 
 function Dashboard() {
   const navigate = useNavigate();
-  const current = new Date();
-  const dt = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+  // const current = new Date();
+  // const dt = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
 
   // const docSet = ['Doc1', 'Doc2', 'Doc3', 'Doc 4'];
   // const d1 = uuidV4();
