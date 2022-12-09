@@ -4,10 +4,10 @@ module.exports = function(app) {
     const UserController = require('../controllers/user');
 
     //Get All Users.
-    app.get('/user/getAll', UserController.get_all_diary);
+    app.get('/user/getAll', UserController.get_all_user);
 
     //Create User.
-    app.post('/user/create', UserController.post_diary);
+    app.post('/user/create', UserController.post_user);
 
     //Edit User.
     // app.put('/user/edit', UserController.user_edit_user);
