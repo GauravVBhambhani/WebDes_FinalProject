@@ -23,6 +23,9 @@ function Navbar() {
             <Link to="/account">
               <li className="nav-list">Account</li>
             </Link>
+            <Link to="/account/calendar">
+              <li className="nav-list">Calendar</li>
+            </Link>
           </ul>
         </div>
         <div>
