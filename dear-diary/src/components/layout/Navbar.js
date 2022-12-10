@@ -47,9 +47,24 @@ function Navbar() {
       </div>
 
       <ul className={!nav ? "hidden" : "absolute w-full px-8 bg-sky-50"}>
-        <li className="border-b-2 nav-list">Diary</li>
-        <li className="border-b-2 bg-sky-50 w-full nav-list">Home</li>
-        <li className="border-b-2 bg-sky-50 w-full nav-list">Account</li>
+      <Link to="/dashboard">
+              <li className="nav-list">Dashboard</li>
+            </Link>
+            {/* <Link to="/diary">
+              <li className="nav-list">Diary</li>
+            </Link> */}
+            <Link to="/account">
+              <li className="nav-list">Account</li>
+            </Link>
+            <Link to="/account/calendar">
+              <li className="nav-list">Calendar</li>
+            </Link>
+            <Link to="/about">
+              <li className="nav-list">About</li>
+            </Link>
+            <Link to="/">
+              <li className="nav-list">Logout</li>
+            </Link>
       </ul>
     </div>
   );

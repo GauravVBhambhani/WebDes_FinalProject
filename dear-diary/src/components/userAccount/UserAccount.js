@@ -31,8 +31,14 @@ class UserAccount extends React.Component {
     render() {
         return (
             <div>
-                <h1>Welcome,</h1>
-                <p>Email: <b>{this.state.userAccount.email}</b></p>
+            <center>
+            <div>
+                <h1 className="font-bold text-2xl">Welcome To Dear Diary</h1>
+                <p>It's a beautiful day!</p>
+                
+            </div>
+            </center>
+            <p><b>{this.state.userAccount.email}</b></p>
             </div>
         );
     }
