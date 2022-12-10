@@ -48,20 +48,20 @@ class Signup extends React.Component {
         return (
             <div>
 
-                <div class="absolute top-0 right-0 flex px-5 pt-5"><p className="px-2 pt-3 text-sm">Already a user?</p><button className="text-black bg-gray-300 rounded font-semibold w-20 h-10 text-sm hover:bg-gray-400" type="submit"> Sign In</button></div>
+                <div className="absolute top-0 right-0 flex px-5 pt-5"><p className="px-2 pt-3 text-sm">Already a user?</p><button className="text-black bg-gray-300 rounded font-semibold w-20 h-10 text-sm hover:bg-gray-400" type="submit"> Sign In</button></div>
 
-                <div className="sign-in-section font-medium">
+                <div className="sign-up-section font-medium text-lg">
 
                     <form onSubmit={this.handleSubmit}>
 
-                        <h3>Create your<br />new account</h3>
+                        <h1 className="font-semibold text-3xl">Create your<br />new account</h1>
 
                         <div className="name-inputs">
                             <div>
                                 <p>First Name</p>
                                 <input
                                     type="fname"
-                                    className="form-control-1"
+                                    className="form-control-1 bg-gray-200"
                                     onChange={(e) => this.setState({ fname: e.target.value })}
                                 />
                             </div>
@@ -70,7 +70,7 @@ class Signup extends React.Component {
                                 <p>Last Name</p>
                                 <input
                                     type="lname"
-                                    className="form-control-1"
+                                    className="form-control-1 bg-gray-200"
                                     onChange={(e) => this.setState({ lname: e.target.value })}
                                 />
                             </div>
@@ -79,14 +79,14 @@ class Signup extends React.Component {
                         <p>Email</p>
                         <input
                             type="email"
-                            className="form-control-2"
+                            className="form-control-2 bg-gray-200"
                             onChange={(e) => this.setState({ email: e.target.value })}
                         />
 
                         <p>Password</p>
                         <input
                             type="password"
-                            className="form-control-2"
+                            className="form-control-2 bg-gray-200"
                             onChange={(e) => this.setState({ password: e.target.value })}
                         />
 

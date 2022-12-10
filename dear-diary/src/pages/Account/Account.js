@@ -14,13 +14,13 @@ function Account() {
         </h1>
       </div>
       <div className="grid grid-rows-4 grid-cols-5 gap-4 mx-[100px] my-6">
-        <div class="row-span-4 h-[700px]">
+        <div className="row-span-4 h-[700px]">
           <ul>
             <li className="sidebar-list">Profile</li>
             <li className="sidebar-list">Password</li>
           </ul>
         </div>
-        <div class="relative col-span-4 row-span-1  bg-profile-color rounded-tl-[80px]">
+        <div className="relative col-span-4 row-span-1  bg-profile-color rounded-tl-[80px]">
           <div className="absolute top-2/4 left-8">
             <div className="relative inline-block">
               <img

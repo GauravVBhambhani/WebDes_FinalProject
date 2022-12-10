@@ -38,7 +38,6 @@ function Dashboard() {
     }
   };
 
-  debugger;
     return (
     <div className='HomePage'>
       <Navbar />
