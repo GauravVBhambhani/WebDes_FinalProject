@@ -7,10 +7,11 @@ import 'font-awesome/css/font-awesome.min.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/fontawesome-free-solid';
 import Navbar from '../layout/Navbar';
+import UserAccount from '../userAccount/UserAccount';
 // import Dashboard from './Dashboard';
 
-
 function Dashboard() {
+  
   const navigate = useNavigate();
   // const current = new Date();
   // const dt = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
@@ -41,13 +42,14 @@ function Dashboard() {
     return (
     <div className='HomePage'>
       <Navbar />
+      <UserAccount />
       <div className="documents">
       <img className="img1" alt="diary1" src={Doc1} onClick={event => handleAdd(event, "Doc1")}/>
       <FontAwesomeIcon className="add" icon={faPlus} transform="grow-60"/>
       {/* <i class="fa-solid fa-plus"></i> */}
-        <img className='img2' alt="diary1" src={Doc2} onClick={event => handleAdd(event, "Doc2")}/>
-        <img className="img3" alt="diary1" src={Doc1} onClick={event => handleAdd(event, "Doc3")}/>
-        <img className="img4" alt="diary1" src={Doc1} onClick={event => handleAdd(event, "Doc4")}/>
+        <img className='img2' alt="diary2" src={Doc2} onClick={event => handleAdd(event, "Doc2")}/>
+        <img className="img3" alt="diary3" src={Doc1} onClick={event => handleAdd(event, "Doc3")}/>
+        <img className="img4" alt="diary4" src={Doc1} onClick={event => handleAdd(event, "Doc4")}/>
       </div>
     </div>
   );

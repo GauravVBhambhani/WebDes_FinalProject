@@ -32,13 +32,12 @@ class Signin extends React.Component {
       }),
 
     }).then((res) => res.json()).then((data) => {
-      console.log(data, "userRegister");
+      console.log(data, "userLogin");
 
       if (data.status === "success") {
         alert("login successful");
         window.localStorage.setItem("token", data.data);
         window.location.href = './dashboard';
-        // window.location.href = <Account/>;
       }
 
     });

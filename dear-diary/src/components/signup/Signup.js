@@ -5,6 +5,8 @@ class Signup extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            firstName: "",
+            lastName: "",
             email: "",
             password: "",
         };
@@ -13,10 +15,10 @@ class Signup extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        const { email, password } = this.state;
-        console.log(email, password);
+        const { firstName, lastName, email, password } = this.state;
+        console.log(firstName, lastName, email, password);
 
-        fetch("http://localhost:3001/user/signin", {
+        fetch("http://localhost:3001/user/signup", {
             method: "POST",
             crossDomain: true,
 
@@ -27,6 +29,8 @@ class Signup extends React.Component {
             },
 
             body: JSON.stringify({
+                firstName,
+                lastName,
                 email,
                 password,
             }),
@@ -35,12 +39,11 @@ class Signup extends React.Component {
             console.log(data, "userRegister");
 
             if (data.status === "success") {
-                alert("login successful");
+                alert("Signup successful");
                 window.localStorage.setItem("token", data.data);
-                window.location.href = './account';
+                window.location.href = './dashboard';
                 // window.location.href = <Account/>;
             }
-
         });
     }
 
@@ -60,7 +63,7 @@ class Signup extends React.Component {
                             <div>
                                 <p>First Name</p>
                                 <input
-                                    type="fname"
+                                    type="firstName"
                                     className="form-control-1 bg-gray-200"
                                     onChange={(e) => this.setState({ fname: e.target.value })}
                                 />
@@ -69,7 +72,7 @@ class Signup extends React.Component {
                             <div className="last-name-div">
                                 <p>Last Name</p>
                                 <input
-                                    type="lname"
+                                    type="lastName"
                                     className="form-control-1 bg-gray-200"
                                     onChange={(e) => this.setState({ lname: e.target.value })}
                                 />
