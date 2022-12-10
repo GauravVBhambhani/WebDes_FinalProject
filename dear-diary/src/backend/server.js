@@ -1,3 +1,4 @@
+// import { toast } from "react-toastify";
 const mongoose = require("mongoose");
 const Document = require("./Document");
 // const Diary = require("")
@@ -81,6 +82,22 @@ io.on("connection", socket => {
             console.log('save is called!!!')
             var email = "prayush@hotmail.com";
 
+            console.log(data.ops[0].insert);
+            const res = await axios({
+                method: 'get',
+                url: "https://twinword-sentiment-analysis.p.rapidapi.com/analyze/", //Endpoint goes here,
+                params:{
+                    text: data.ops[0].insert
+                },
+                headers: {
+                    'X-RapidAPI-Key': '5b6c06fa0amsh519b2e9eb26f0b1p13f308jsn1e3fdb298544',
+                    'X-RapidAPI-Host': 'twinword-sentiment-analysis.p.rapidapi.com'
+                  }
+            });
+
+            console.log('api result');
+            console.log(res.data.type);
+            
             await findAndUpdateDocument(email, data);
         })
     })
