@@ -44,6 +44,7 @@ class Signin extends React.Component {
   }
 
   render() {
+
     return (
       <div>
 
@@ -58,18 +59,18 @@ class Signin extends React.Component {
             <p>Email</p>
             <input
               type="email"
-              className="form-control-2"
+              className="form-control-2 bg-gray-200"
               onChange={(e) => this.setState({ email: e.target.value })}
             />
 
             <p>Password</p>
             <input
               type="password"
-              className="form-control-2"
+              className="form-control-2 bg-gray-200"
               onChange={(e) => this.setState({ password: e.target.value })}
             />
 
-            <div className="text-sm text-right">
+            <div className="text-sm font-medium text-blue-600">
               <a href="/" >Forgot password?</a>
             </div>
 
