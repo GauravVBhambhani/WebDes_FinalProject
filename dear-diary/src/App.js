@@ -11,9 +11,9 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
-import Password from "./pages/Account/Password";
-import Account from "./pages/Account/Account";
-import Profile from "./pages/Account/Profile";
+import Password from "./pages/account/Password";
+import Account from "./pages/account/Account";
+import Profile from "./pages/account/Profile";
 import Calendar from './pages/Calendar';
 import TextEditor from '../src/components/Document/TextEditor';
 import Home from './pages/Home';
