@@ -10,7 +10,7 @@ class UserAccount extends React.Component {
     }
 
     componentDidMount() {
-        fetch("http://localhost:3001/userAccount", {
+        fetch("http://localhost:3002/userAccount", {
             method: "POST",
             crossDomain: true,
             headers: {

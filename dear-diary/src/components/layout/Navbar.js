@@ -14,12 +14,12 @@ function Navbar() {
         <div className="ml-10 flex items-center">
           <img src={dearDiary} alt="logo" className="mr-4" />
           <ul className="hidden md:flex">
-            <Link to="/">
-              <li className="nav-list">Home</li>
+            <Link to="/dashboard">
+              <li className="nav-list">Dashboard</li>
             </Link>
-            <Link to="/diary">
+            {/* <Link to="/diary">
               <li className="nav-list">Diary</li>
-            </Link>
+            </Link> */}
             <Link to="/account">
               <li className="nav-list">Account</li>
             </Link>

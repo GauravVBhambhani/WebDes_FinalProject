@@ -113,7 +113,7 @@ class Signup extends React.Component {
         const { firstName, lastName, email, password } = this.state;
         console.log(firstName, lastName, email, password);
 
-        fetch("http://localhost:3001/user/signup", {
+        fetch("http://localhost:3002/user/signup", {
             method: "POST",
             crossDomain: true,
 
