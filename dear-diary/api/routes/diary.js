@@ -6,6 +6,8 @@ module.exports = function(app) {
     //Get All Diaries.
     app.get('/diary/getAll', UserController.get_all_diary);
 
+    app.get('/diary/get', UserController.get_diary);
+
     //Create Diary.
     app.post('/diary/create', UserController.post_diary);
 
