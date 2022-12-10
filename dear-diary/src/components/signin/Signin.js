@@ -1,5 +1,6 @@
 import React from "react";
 import './Signin.css';
+import { Link } from 'react-router-dom';
 
 class Signin extends React.Component {
   constructor(props) {
@@ -48,7 +49,7 @@ class Signin extends React.Component {
     return (
       <div>
 
-        <div className="absolute top-0 right-0 flex px-5 pt-5"><p className="px-2 pt-3 text-sm"> New to Dear Diary? </p><button className="text-black bg-gray-300 rounded font-semibold w-20 h-10 text-sm hover:bg-gray-400" type="submit">Sign Up</button></div>
+        <div className="absolute top-0 right-0 flex px-5 pt-5"><p className="px-2 pt-3 text-sm"> New to Dear Diary? </p> <Link to="/"> <button className="text-black bg-gray-300 rounded font-semibold w-20 h-10 text-sm hover:bg-gray-400">Sign Up</button></Link></div>
 
         <div className="sign-in-section font-medium">
 

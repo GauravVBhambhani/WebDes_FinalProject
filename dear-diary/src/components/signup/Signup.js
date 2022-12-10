@@ -1,8 +1,9 @@
 import React from "react";
 import './Signup.css';
 import $ from 'jquery';
+import { Link } from "react-router-dom";
 
-var valid = 0;
+// var valid = 0;
 
 function validate_uname() {
     var uname_val = $("#uname").val();
@@ -10,25 +11,25 @@ function validate_uname() {
         $("#uname").css({ "border": "1px solid red" });
         $("#uname_error").text("Name cannot be empty!");
         $("#uname_error").css({ "margin-top": "5px" });
-        valid = 0;
+        // valid = 0;
     }
     else if (/^[a-zA-Z0-9- ]*$/.test(uname_val) === false) {
         $("#uname").css({ "border": "1px solid red" });
         $("#uname_error").text("Username cannot contain special characters!");
         $("#uname_error").css({ "margin-top": "5px" });
-        valid = 0;
+        // valid = 0;
     }
     else if (uname_val.length < 5) {
         $("#uname").css({ "border": "1px solid red" });
         $("#uname_error").text("Username should have more than 5 characters!");
         $("#uname_error").css({ "margin-top": "5px" });
-        valid = 0;
+        // valid = 0;
     }
     else {
         $("#uname").css({ "border": "1px solid grey" });
         $("#uname_error").text("");
         $("#uname_error").css({ "margin-top": "0px" });
-        valid++;
+        // valid++;
     }
 }
 
@@ -38,19 +39,19 @@ function validate_email() {
         $("#email").css({ "border": "1px solid red" });
         $("#email_error").text("Email cannot be empty!");
         $("#email_error").css({ "margin-top": "5px" });
-        valid = 0;
+        // valid = 0;
     }
     else if (/^(\W|^)[\w.+-]*@gmail\.com(\W|$)$/.test(email_val) === false) {
         $("#email").css({ "border": "1px solid red" });
         $("#email_error").text("Email must be a valid Gmail address!");
         $("#email_error").css({ "margin-top": "5px" });
-        valid = 0;
+        // valid = 0;
     }
     else {
         $("#email").css({ "border": "1px solid grey" });
         $("#email_error").text("");
         $("#email_error").css({ "margin-top": "0px" });
-        valid++;
+        // valid++;
     }
 }
 
@@ -61,27 +62,27 @@ function validate_pass() {
         $("#pass_error").text("Password cannot be empty!");
         $("#pass_error").css({ "margin-top": "5px" });
         $("#pass").val("");
-        valid = 0;
+        // valid = 0;
     }
     else if (/^[a-zA-Z0-9- ]*$/.test(pass_val) === true) {
         $("#pass").css({ "border": "1px solid red" });
         $("#pass_error").text("Password must contain at least 1 special character(s)!");
         $("#pass_error").css({ "margin-top": "5px" });
         $("#pass").val("");
-        valid = 0;
+        // valid = 0;
     }
     else if (pass_val.length < 5) {
         $("#pass").css({ "border": "1px solid red" });
         $("#pass_error").text("Password should have more than 5 characters!");
         $("#pass_error").css({ "margin-top": "5px" });
         $("#pass").val("");
-        valid = 0;
+        // valid = 0;
     }
     else {
         $("#pass").css({ "border": "1px solid grey" });
         $("#pass_error").text("");
         $("#pass_error").css({ "margin-top": "0px" });
-        valid++;
+        // valid++;
     }
 }
 
@@ -146,7 +147,7 @@ class Signup extends React.Component {
         return (
             <div>
 
-                <div className="absolute top-0 right-0 flex px-5 pt-5"><p className="px-2 pt-3 text-sm">Already a user?</p><button className="text-black bg-gray-300 rounded font-semibold w-20 h-10 text-sm hover:bg-gray-400" type="submit"> Sign In</button></div>
+                <div className="absolute top-0 right-0 flex px-5 pt-5"><p className="px-2 pt-3 text-sm">Already a user?</p><Link to="/signin"><button className="text-black bg-gray-300 rounded font-semibold w-20 h-10 text-sm hover:bg-gray-400" type="submit">Sign In</button></Link></div>
 
                 <div className="sign-up-section font-medium text-lg">
 
