@@ -5,34 +5,47 @@ var User = require('../models/user');
 // const bcrypt = require('bcrypt');
 
 var { MongoClient } = require('mongodb');
+const { db } = require('../models/user');
 
 var mongo = new MongoClient("mongodb+srv://pateldhruvr:s!hzk*6z7k2rRtT@cluster0.olpizhz.mongodb.net/?retryWrites=true&w=majority");
 var myDb = mongo.db("test")
 
 exports.get_all_user = function(req, res) {
-    // res.send("Users ----")
     User.find(function(err, user) {
-        // if there is an error retrieving, send the error.
-        // nothing after res.send(err) will execute
         if (err)
             res.send(err);
-        // console.log('Users', user);
         res.json(user);
         return null;
     });
 }
 
-// exports.get_user = function (req, res) {
-//     User.find(function(err, user) {
-//         // if there is an error retrieving, send the error.
-//         // nothing after res.send(err) will execute
-//         if (err)
-//             res.send(err);
-//         // console.log('Users', user);
-//         res.json(user);
-//         return null;
-//     });
-// }
+exports.get_user = async function (req, res) {
+    // const userId = req.query.id;
+    // console.log(req.query);
+    // console.log(userId);
+    // res.send(User.find({"_id" : userId}));
+
+    // res.json(User.find());
+
+    myDb.collection("users").find({"email":"a@a.com"}).toArray(function(err, results){
+        console.log(results);
+        console.log('----------');
+    });
+    var myUser = await myDb.collection("users").find({"_id": "63924854cc794b934b7b3937"});
+    console.log(JSON.stringify(myUser));
+    // res.json(myUser);
+    res.send("Requested user is : ");
+
+    // User.find(function(err, user) {
+    //     // if there is an error retrieving, send the error.
+    //     // nothing after res.send(err) will execute
+    //     if (err)
+    //         res.send(err);
+    //     // console.log('Users', user);
+    //     res.json(user);
+    //     return null;
+    // });
+}
 
 exports.post_user = function(req, res) {
     // console.log(req.body);

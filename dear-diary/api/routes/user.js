@@ -6,6 +6,9 @@ module.exports = function(app) {
     //Get All Users.
     app.get('/user/getAll', UserController.get_all_user);
 
+    //Get All Users.
+    app.get('/user/get', UserController.get_user);
+
     //Create User.
     app.post('/user/create', UserController.post_user);
 

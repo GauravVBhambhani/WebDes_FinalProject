@@ -18,6 +18,29 @@ exports.get_all_diary = function(req, res) {
     });
 }
 
+exports.get_diary = function(req, res) {
+
+    // var options = {
+    //     "limit": 1,
+    //     "sort": [["_id", "desc"]]
+    // }
+
+    myDb.collection("diary").find({"data.email": req.query.email, "data.date": req.query.date}).toArray(function(err, results){
+        res.json(results);
+        console.log('----------');
+    });
+
+    // Diary.find(function(err, diary) {
+    //     // if there is an error retrieving, send the error.
+    //     // nothing after res.send(err) will execute
+    //     if (err)
+    //         res.send(err);
+    //     // console.log('Users', user);
+    //     res.json({"diaryDocuments" : userId});
+    //     return null;
+    // });
+}
+
 exports.post_diary = function(req, res) {
     // console.log(req.body);
     var rec = new Diary(req.body);

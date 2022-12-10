@@ -7,6 +7,7 @@ import 'font-awesome/css/font-awesome.min.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/fontawesome-free-solid';
 import Navbar from '../layout/Navbar';
+import { v4 as uuidv4 } from 'uuid';
 // import Dashboard from './Dashboard';
 
 
@@ -15,40 +16,18 @@ function Dashboard() {
   // const current = new Date();
   // const dt = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
 
-  // const docSet = ['Doc1', 'Doc2', 'Doc3', 'Doc 4'];
-  // const d1 = uuidV4();
-  // const d2 = uuidV4();
-  // const d3 = uuidV4();
-  // const d4 = uuidV4();
-  const handleAdd = (event, param) => {
-    if(param==='Doc1'){
-      navigate(`/NewDoc/d1`);
-    }
-    else if(param==='Doc2'){
-      navigate(`/NewDoc/d2`);
-    }
-    else if(param==='Doc3'){
-      navigate(`/NewDoc/d3`);
-    }
-    else if(param==='Doc4'){
-      navigate(`/NewDoc/d4`);
-    }
-    else{
-      console.log("Make payment to access more diaries");
-    }
+  const d4 = uuidv4();
+  const handleAdd = (event) => {
+      navigate(`/NewDoc/${d4}`);
   };
 
-  debugger;
     return (
     <div className='HomePage'>
       <Navbar />
       <div className="documents">
-      <img className="img1" alt="diary1" src={Doc1} onClick={event => handleAdd(event, "Doc1")}/>
+      <img className="img1" alt="diary1" src={Doc1} onClick={event => handleAdd(event)}/>
       <FontAwesomeIcon className="add" icon={faPlus} transform="grow-60"/>
       {/* <i class="fa-solid fa-plus"></i> */}
-        <img className='img2' alt="diary1" src={Doc2} onClick={event => handleAdd(event, "Doc2")}/>
-        <img className="img3" alt="diary1" src={Doc1} onClick={event => handleAdd(event, "Doc3")}/>
-        <img className="img4" alt="diary1" src={Doc1} onClick={event => handleAdd(event, "Doc4")}/>
       </div>
     </div>
   );
@@ -62,7 +41,6 @@ export default Dashboard;
     navigate(`/NewDoc/doc id`);
   };
 
-  debugger;
     return (
     <div className='HomePage'>
       <div className='deardiaryimg'>
