@@ -11,7 +11,10 @@ const jwt = require('jsonwebtoken');
 const JWT_SECRET = "8ofg8375fgeiyrfblo8734gr90()JHKEBVIU4898209348URUJD4UI??{}[]"
 
 const mongoose = require('mongoose')
-const mongoURL = "mongodb+srv://gauravbhambhani:gaurav@newcluster.pk9lfqr.mongodb.net/?retryWrites=true&w=majority";
+const mongoURL = "mongodb+srv://pateldhruvr:s!hzk*6z7k2rRtT@cluster0.olpizhz.mongodb.net/?retryWrites=true&w=majority";
+
+
+// mongoose.connect('mongodb+srv://pateldhruvr:s!hzk*6z7k2rRtT@cluster0.olpizhz.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true });
 
 mongoose.connect(mongoURL, {
     useNewUrlParser: true
@@ -120,7 +123,6 @@ var port = process.env.PORT || 8080;
 //mongoose.connect('mongodb://localhost:27017', { useNewUrlParser: true });
 //mongoose.connect('mongodb://localhost:27017', { useNewUrlParser: true });
 // mongoose.connect('mongodb+srv://pinned:pinned@cluster0.di3g9.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true });
-mongoose.connect('mongodb+srv://pateldhruvr:s!hzk*6z7k2rRtT@cluster0.olpizhz.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true });
 
 
 // get all data/stuff of the body (POST) parameters

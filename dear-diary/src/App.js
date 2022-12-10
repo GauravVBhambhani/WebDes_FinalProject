@@ -24,9 +24,20 @@ function App() {
   // const current = new Date();
   // const currentDate = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
   return (
+    // <Routes>
+    //   <Route path="/" element={<Home />} />
+    //   <Route path="/signup" element={<Signup />} />
+    //   <Route path="/account" element={<Account />} />
+    //   <Route path="/account/profile" element={<Profile />} />
+    //   <Route path="/account/password" element={<Password />} />
+    //   <Route path="/account/calendar" element={<Calendar />} />
+    //   <Route path="/NewDoc/:id" element={<TextEditor/>} />
+    // </Routes>
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/signup" element={<Signup />} />
+      <Route path="/" element={<Signup />} />
+      <Route path="/signin" element={<Signin />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/dashboard" element={<Home />} />
       <Route path="/account" element={<Account />} />
       <Route path="/account/profile" element={<Profile />} />
       <Route path="/account/password" element={<Password />} />

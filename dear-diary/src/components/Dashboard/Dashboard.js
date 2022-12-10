@@ -28,7 +28,7 @@ function Dashboard() {
     return (
     <div className='HomePage'>
       <Navbar />
-      <UserAccount />
+      {/* <UserAccount /> */}
       <div className="documents">
       <img className="img1" alt="diary1" src={Doc1} onClick={event => handleAdd(event)}/>
       <FontAwesomeIcon className="add" icon={faPencilAlt} transform="grow-60"/>
