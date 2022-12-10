@@ -1,6 +1,7 @@
 .section-white{
     background: #fff;
     padding: 70px 0;
+    justify-content: center;
 }
 
 .team-item {

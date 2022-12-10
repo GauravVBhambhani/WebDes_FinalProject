@@ -1,5 +1,6 @@
 import React from "react";
 import './Signin.css';
+import { Link } from 'react-router-dom';
 
 class Signin extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class Signin extends React.Component {
     const { email, password } = this.state;
     console.log(email, password);
 
-    fetch("http://localhost:3001/user/signin", {
+    fetch("http://localhost:3002/user/signin", {
       method: "POST",
       crossDomain: true,
 
@@ -32,23 +33,23 @@ class Signin extends React.Component {
       }),
 
     }).then((res) => res.json()).then((data) => {
-      console.log(data, "userRegister");
+      console.log(data, "userLogin");
 
       if (data.status === "success") {
         alert("login successful");
         window.localStorage.setItem("token", data.data);
         window.location.href = './dashboard';
-        // window.location.href = <Account/>;
       }
 
     });
   }
 
   render() {
+
     return (
       <div>
 
-        <div className="absolute top-0 right-0 flex px-5 pt-5"><p className="px-2 pt-3 text-sm"> New to Dear Diary? </p><button className="text-black bg-gray-300 rounded font-semibold w-20 h-10 text-sm hover:bg-gray-400" type="submit">Sign Up</button></div>
+        <div className="absolute top-0 right-0 flex px-5 pt-5"><p className="px-2 pt-3 text-sm"> New to Dear Diary? </p> <Link to="/"> <button className="text-black bg-gray-300 rounded font-semibold w-20 h-10 text-sm hover:bg-gray-400">Sign Up</button></Link></div>
 
         <div className="sign-in-section font-medium">
 
@@ -59,18 +60,18 @@ class Signin extends React.Component {
             <p>Email</p>
             <input
               type="email"
-              className="form-control-2"
+              className="form-control-2 bg-gray-200"
               onChange={(e) => this.setState({ email: e.target.value })}
             />
 
             <p>Password</p>
             <input
               type="password"
-              className="form-control-2"
+              className="form-control-2 bg-gray-200"
               onChange={(e) => this.setState({ password: e.target.value })}
             />
 
-            <div className="text-sm text-right">
+            <div className="text-sm font-medium text-blue-600">
               <a href="/" >Forgot password?</a>
             </div>
 

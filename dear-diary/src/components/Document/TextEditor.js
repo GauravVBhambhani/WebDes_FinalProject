@@ -6,7 +6,8 @@ import { io } from "socket.io-client"
 import { useParams } from 'react-router-dom'
 
 
-const SAVE_INTERVAL_MS = 2000;
+
+const SAVE_INTERVAL_MS = 5000;
 /*Give style to out toolbar*/
 const TOOLBAR_OPTIONS = [
     [{ header: [1, 2, 3, 4, 5, 6, false] }],
@@ -132,9 +133,15 @@ export default function TextEditor() {
         //to disable the text cursor when the document is loading
     }, [])
 
+    // toast(" Let’s toast to this toast today! ")
+    // const showToast = () => {
+    //     toast(" Let’s toast to this toast today! ");
+    //   };
     return (
         <div className="container" ref={wrapperRef}>
-            Text Editor
+            {/* Text Editor
+            <button onClick={showToast}>Pop that toast!</button>
+            <ToastContainer/> */}
         </div>
     )
 }
