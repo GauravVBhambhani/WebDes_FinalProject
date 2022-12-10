@@ -1,50 +1,99 @@
-// modules =================================================
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
-var methodOverride = require('method-override');
-var mongoose = require('mongoose');
+const express = require('express')
+const app = express();
+app.use(express.json());
 
+const cors = require('cors');
+app.use(cors());
 
-// configuration ===========================================
-// set port
+const bcrypt = require('bcryptjs');
 
+const jwt = require('jsonwebtoken');
+const JWT_SECRET = "8ofg8375fgeiyrfblo8734gr90()JHKEBVIU4898209348URUJD4UI??{}[]"
 
-var port = process.env.PORT || 8080;
+const mongoose = require('mongoose')
+const mongoURL = "mongodb+srv://gaurav:gauravbhambhani@cluster0.zmrvhyc.mongodb.net/?retryWrites=true&w=majority";
 
+mongoose.connect(mongoURL, {
+    useNewUrlParser : true
+}).then(()=>{
+    console.log("Connection to database estabilished...");
+}).catch((e)=>console.log(e))
 
-// connect to our mongoDB database
-// (uncomment after you enter in your own credentials in config/db.js)
-//mongodb://localhost/mylib
-//mongoose.connect('mongodb://localhost:27017', { useNewUrlParser: true });
-//mongoose.connect('mongodb://localhost:27017', { useNewUrlParser: true });
-// mongoose.connect('mongodb+srv://pinned:pinned@cluster0.di3g9.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true });
-mongoose.connect('mongodb+srv://pateldhruvr:s!hzk*6z7k2rRtT@cluster0.olpizhz.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true });
+app.post("/post", async (req, res) => {
+    console.log(req.body);
+    const {data} = req.body;
 
+    try {
+        if (data == "gaurav"){
+            res.send({status: "ok"});
+        } else {
+            res.send({status: "User doesn't exist!"});
+        }
+    } catch(error) {
+        res.send({status: "Something went wrong!"});
+    }
+});
 
-// get all data/stuff of the body (POST) parameters
-// parse application/json
-app.use(bodyParser.json());
+require('./models/userSchema')
 
-// parse application/vnd.api+json as json
-app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
+const User = mongoose.model("UserInfo");
 
-// parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }));
+app.post('/user/signup', async (req, res) => {
+    const {name, email, password} = req.body;
 
-// override with the X-HTTP-Method-Override header in the request. simulate DELETE/PUT
-app.use(methodOverride('X-HTTP-Method-Override'));
+    const encryptPassword = await bcrypt.hash(password, 10)
+    try {
 
-// set the static files location /public/img will be /img for users
-app.use(express.static(__dirname + '/public'));
+        const existingUser = await User.findOne({email})
+        if (existingUser) return res.send("User account already exists.")
 
-// routes ==================================================
-require('./routes/user.js')(app); // configure our routes
-require('./routes/diary.js')(app);
-// start app ===============================================
-// startup our app at http://localhost:8080
-app.listen(port);
-// shoutout to the user
-console.log('App started at port ' + port);
-// expose app
-exports = module.exports = app;
+        await User.create({
+            name,
+            email,
+            password: encryptPassword
+        });
+        res.send({status: "User added to database..."});
+    } catch(error){
+        res.send({status: "An error has occured!"})
+    }
+});
+
+app.post('/user/signin', async (req, res) => {
+    const {email, password} = req.body;
+
+    const user = await User.findOne({email});
+
+    if (!user) return res.json({error: "User doesn't exist."});
+
+    if (await bcrypt.compare(password, user.password)){
+        const token = jwt.sign({email: user.email}, JWT_SECRET)
+
+        if (res.status(201)) {
+            return res.json({status : "success", data: token});
+        } else {
+            return res.json({error: "error"});
+        }
+    }
+    res.json({status: "error", error: "Invalid password!"});
+});
+
+app.post("/userAccount", async (req, res) => {
+    const { token } = req.body;
+    try {
+      const user = jwt.verify(token, JWT_SECRET);
+      console.log(user);
+  
+      const useremail = user.email;
+      User.findOne({ email: useremail })
+        .then((data) => {
+          res.send({ status: "ok", data: data });
+        })
+        .catch((error) => {
+          res.send({ status: "error", data: error });
+        });
+    } catch (error) {}
+  });
+
+app.listen(3001, () => {
+    console.log("Server active...")
+});

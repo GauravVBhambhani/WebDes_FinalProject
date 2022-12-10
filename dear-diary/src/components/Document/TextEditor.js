@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useCallback, useState } from 'react'
+import React, { useEffect, useCallback, useState } from 'react'
 import Quill from 'quill';
 import "quill/dist/quill.snow.css";         //STYLESHEET THAT WE ARE GOING TO USE      
 import { io } from "socket.io-client"
@@ -45,7 +45,7 @@ export default function TextEditor() {
         const handler = (delta, oldDelta, source) => {
             //source is gonna detect if user is gonna make changes or library has made changes
             //to test if user has made the changes
-            if (source != 'user') return
+            if (source !== 'user') return
             //send the changes to user
             //emit changes from client to a server
             socket.emit("send-changes", delta);

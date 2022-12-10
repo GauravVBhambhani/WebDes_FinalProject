@@ -10,7 +10,7 @@ const SplitScreen = () => {
 
           {/* Left section */}
           <div className='w-full h-full centered row-span-4 md:col-span-4'>
-            <img src={require('../components/assets/signin_landing.png')} alt='Landing page' className='text-black h-full w-full '/>
+            <img src={require('../assets/signin_landing.png')} alt='Landing page' className='text-black h-full w-full '/>
           </div>
 
           {/* Right section */}
